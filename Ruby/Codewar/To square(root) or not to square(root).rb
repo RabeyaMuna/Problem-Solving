@@ -11,3 +11,9 @@ def square_or_square_root(arr)
     
     return new_arr
 end
+
+Another way=================
+ 
+def square_or_square_root(arr)
+  arr.map {|x| Math.sqrt(x) == Math.sqrt(x).to_i ? Math.sqrt(x) : x**2}
+end
