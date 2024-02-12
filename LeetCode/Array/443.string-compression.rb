@@ -8,8 +8,7 @@ def compress(chars)
   chars.each_index do |i|
     count += 1
     if  chars[i+1] != chars[i]
-       compressed_string += count.to_s  if count > 1
-       compressed_string += chars[i+1] if !chars[i+1].nil?
+       compressed_string << (count > 1 ? count.to_s : '') << (chars[i+1] || '')
        count = 0
     end
   end
