@@ -1,0 +1,10 @@
+def can_jump(nums)
+    i, max_reach = 0, nums[0]
+    
+    while i < nums.size && i <= max_reach
+        max_reach = [(i + nums[i]), max_reach].max 
+        i += 1
+    end
+    
+    i == nums.size ? true : false
+end
