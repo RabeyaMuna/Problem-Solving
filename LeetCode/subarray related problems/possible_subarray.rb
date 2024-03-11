@@ -1,4 +1,12 @@
+# Two pointer and recursive methods have been used.
+# First I have pointed out the two pointers from the Zero index
+# Since both of them started from zero index I have provided base case: start == numbers.size && _end == numbers.size
+# Intially start and end case will start from 0 index and it will iterate up to array length for generating subarray from a particular index
+# When the end will reach to array length, the start index will increase by one, and the end index will point to the same index as one and do the rest of the work as it is.
 
+
+#Time Complexity:  time complexity is O(2^n)
+# Space Complexity: O(n * 2^n)
 def generate_all_possible_sub_array(arr, numbers, start, _end)
   if start == numbers.size && _end == numbers.size
     return arr
