@@ -1,0 +1,38 @@
+# Definition for a binary tree node.
+# class TreeNode
+#     attr_accessor :val, :left, :right
+#     def initialize(val = 0, left = nil, right = nil)
+#         @val = val
+#         @left = left
+#         @right = right
+#     end
+# end
+# @param {TreeNode} root
+# @return {Integer[][]}
+def level_order(root)
+
+  return [] if root.nil?
+
+  queue = []
+  result = []
+  queue.push(root)
+
+
+  while !queue.empty?
+    level = []
+    queue_len = queue.size
+    
+    (0...queue.size).each do |i|
+      temp_root = queue.shift
+
+      level.push(temp_root.val)
+
+      queue.push(temp_root.left) if temp_root.left
+      queue.push(temp_root.right) if temp_root.right
+    end
+
+    result << level
+  end
+    
+    return result
+end
